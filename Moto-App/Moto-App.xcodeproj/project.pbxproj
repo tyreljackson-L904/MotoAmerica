@@ -11,6 +11,8 @@
 		A58132A42854514000B95C3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58132A32854514000B95C3E /* ContentView.swift */; };
 		A58132A62854514300B95C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A52854514300B95C3E /* Assets.xcassets */; };
 		A58132A92854514300B95C3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A82854514300B95C3E /* Preview Assets.xcassets */; };
+		A58132B12854F61F00B95C3E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58132B02854F61F00B95C3E /* Colors.swift */; };
+		A5B8D82C285522690075A8D8 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8D82B285522690075A8D8 /* Rider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		A58132A32854514000B95C3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A58132A52854514300B95C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58132A82854514300B95C3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A58132B02854F61F00B95C3E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A5B8D82B285522690075A8D8 /* Rider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5487183285516790038000B /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		A58132952854514000B95C3E = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +62,13 @@
 		A58132A02854514000B95C3E /* Moto-App */ = {
 			isa = PBXGroup;
 			children = (
+				A5487183285516790038000B /* Modifiers */,
+				A58132AF2854F60900B95C3E /* Extensions */,
 				A58132A12854514000B95C3E /* Moto_AppApp.swift */,
 				A58132A32854514000B95C3E /* ContentView.swift */,
 				A58132A52854514300B95C3E /* Assets.xcassets */,
 				A58132A72854514300B95C3E /* Preview Content */,
+				A5B8D82B285522690075A8D8 /* Rider.swift */,
 			);
 			path = "Moto-App";
 			sourceTree = "<group>";
@@ -65,6 +79,14 @@
 				A58132A82854514300B95C3E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A58132AF2854F60900B95C3E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A58132B02854F61F00B95C3E /* Colors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B8D82C285522690075A8D8 /* Rider.swift in Sources */,
 				A58132A42854514000B95C3E /* ContentView.swift in Sources */,
+				A58132B12854F61F00B95C3E /* Colors.swift in Sources */,
 				A58132A22854514000B95C3E /* Moto_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
