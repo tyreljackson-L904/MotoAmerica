@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Moto_AppApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RiderListView(race: RaceList.classes.first!)
+//            RaceClassView(rider: RiderList.riders.first!)
         }
     }
 }
