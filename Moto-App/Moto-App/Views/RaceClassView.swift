@@ -16,10 +16,12 @@ struct RaceClassView: View {
     var body: some View {
         NavigationView{
             List(raceClass, id: \.id) { race in
-                RaceClassCell(raceClass: race, rider: rider)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-                    .padding()
+                NavigationLink(destination: RiderListView(race: race), label: {
+                    RaceClassCell(raceClass: race)
+                })
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .padding()
             }
             .navigationTitle("Races")
             .navigationBarTitleDisplayMode(.inline)
@@ -30,25 +32,21 @@ struct RaceClassView: View {
 struct RaceClassCell: View {
     
     var raceClass: RaceClass
-    var rider: Rider
     
     var body: some View {
-        NavigationLink(destination: RiderListView(race: raceClass), label: {
-            HStack{
-                Image(raceClass.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100,height: 70)
-                
-                Spacer()
-                
-                Text("\(raceClass.name)")
-                    .font(.headline)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.5)
-            }
+        HStack{
+            Image(raceClass.imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100,height: 70)
             
-        })
+            Spacer()
+            
+            Text("\(raceClass.name)")
+                .font(.headline)
+                .lineLimit(2)
+                .minimumScaleFactor(0.5)
+        }
         
     }
 }

@@ -13,25 +13,22 @@ struct RiderListView: View {
     var race: RaceClass
     
     var body: some View {
-        NavigationView {
-            VStack {
-                List(riders, id: \.id) { rider in
+        VStack {
+            List(riders, id: \.id) { rider in
+                NavigationLink(destination: RiderDetailView(rider: rider), label: {
                     HStack(spacing: 20) {
                         RiderCell(rider: rider)
                     }
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-                    .padding(.vertical, 14)
-                    
-                }
-                
-                
+                })
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .padding(.vertical, 14)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white)
-            .navigationTitle("\(race.name)")
-            .navigationBarTitleDisplayMode(.inline)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.white)
+        .navigationTitle("\(race.name)")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -39,9 +36,7 @@ struct RiderCell: View {
     
     var rider: Rider
     var body: some View {
-        
         ZStack {
-            
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(
@@ -74,6 +69,7 @@ struct RiderCell: View {
                 .foregroundColor(.secondary)
             
         }
+        
     }
 }
 
