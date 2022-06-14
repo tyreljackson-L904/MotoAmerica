@@ -12,9 +12,7 @@
 		A58132A62854514300B95C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A52854514300B95C3E /* Assets.xcassets */; };
 		A58132A92854514300B95C3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A82854514300B95C3E /* Preview Assets.xcassets */; };
 		A58132B12854F61F00B95C3E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58132B02854F61F00B95C3E /* Colors.swift */; };
-		A5AE4829285670CA00F8F423 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE4828285670CA00F8F423 /* ContentView.swift */; };
 		A5AE482C2856785000F8F423 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = A5AE482B2856785000F8F423 /* NavigationStack */; };
-		A5AE482E28567FD800F8F423 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE482D28567FD800F8F423 /* HomeView.swift */; };
 		A5B8D82C285522690075A8D8 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8D82B285522690075A8D8 /* Rider.swift */; };
 		A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */; };
 		A5EC673A285556DA00AAA97C /* RaceClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6739285556DA00AAA97C /* RaceClassView.swift */; };
@@ -28,8 +26,6 @@
 		A58132A52854514300B95C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58132A82854514300B95C3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A58132B02854F61F00B95C3E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		A5AE4828285670CA00F8F423 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A5AE482D28567FD800F8F423 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A5B8D82B285522690075A8D8 /* Rider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
 		A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderDetailView.swift; sourceTree = "<group>"; };
 		A5EC6739285556DA00AAA97C /* RaceClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClassView.swift; sourceTree = "<group>"; };
@@ -115,8 +111,6 @@
 			children = (
 				A58132A32854514000B95C3E /* RiderListView.swift */,
 				A5EC6739285556DA00AAA97C /* RaceClassView.swift */,
-				A5AE4828285670CA00F8F423 /* ContentView.swift */,
-				A5AE482D28567FD800F8F423 /* HomeView.swift */,
 				A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */,
 			);
 			path = Views;
@@ -200,10 +194,8 @@
 			files = (
 				A5B8D82C285522690075A8D8 /* Rider.swift in Sources */,
 				A5EC673D28556B9100AAA97C /* RaceClass.swift in Sources */,
-				A5AE4829285670CA00F8F423 /* ContentView.swift in Sources */,
 				A58132A42854514000B95C3E /* RiderListView.swift in Sources */,
 				A58132B12854F61F00B95C3E /* Colors.swift in Sources */,
-				A5AE482E28567FD800F8F423 /* HomeView.swift in Sources */,
 				A5EC673A285556DA00AAA97C /* RaceClassView.swift in Sources */,
 				A58132A22854514000B95C3E /* Moto_AppApp.swift in Sources */,
 				A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */,

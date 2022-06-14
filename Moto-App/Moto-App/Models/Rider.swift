@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Rider: Identifiable {
+struct Rider: Identifiable, Hashable {
     let id = UUID()
     let riderImage: String
     let name: String
@@ -37,3 +37,5 @@ struct RiderList {
         Rider(riderImage: "DavidLambert", name: "David Lambert", bikeNumber: 28, nationality: "USA", sponsors: ["Kawasaki", "Dunlop", "Langbros Leathers", "Rocky Mountain Cycle Plaza", "HJC Helmet", "Evol Technology", "Vortex", "SBS Brakes", "D&S Paint", "Rex Coulthard", "Yoder Paintwork & Fiberglass"], team: "Lambert Motorsports", bike: "2018 Kawasaki ZX-10R", hometown: "Pueblo, CO", height: "5'10", weight: 180, dob: "April 24th, 1978")
     ]
 }
+
+
