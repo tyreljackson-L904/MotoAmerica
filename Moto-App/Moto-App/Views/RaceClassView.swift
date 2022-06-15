@@ -14,18 +14,16 @@ struct RaceClassView: View {
     var rider: Rider
     
     var body: some View {
-        NavigationView{
-            List(raceClass, id: \.id) { race in
-                NavigationLink(destination: RiderListView(race: race), label: {
-                    RaceClassCell(raceClass: race)
-                })
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .padding()
-            }
-            .navigationTitle("Races")
-            .navigationBarTitleDisplayMode(.inline)
+        List(raceClass, id: \.id) { race in
+            NavigationLink(destination: RiderListView(race: race), label: {
+                RaceClassCell(raceClass: race)
+            })
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
+            .padding()
         }
+        .navigationTitle("Race Class")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -54,5 +52,7 @@ struct RaceClassCell: View {
 struct RaceClassView_Previews: PreviewProvider {
     static var previews: some View {
         RaceClassView(rider: RiderList.riders.first!)
+        RaceClassView(rider: RiderList.riders.first!)
+            .preferredColorScheme(.dark)
     }
 }

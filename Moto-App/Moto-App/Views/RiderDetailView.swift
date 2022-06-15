@@ -9,13 +9,34 @@ import SwiftUI
 
 struct RiderDetailView: View {
     
-    @State private var tabSelection = 2
-    
+    @State var tabSelection = 1
     var rider: Rider
-    var rows = [GridItem(.adaptive(minimum: 50))]
+    
+    var body: some View {
+        
+        ZStack {
+            VStack{
+                PickerImageView(tabSelection: $tabSelection, rider: rider)
+                
+                Spacer()
+                
+                TabbedContentView(tabSelection: $tabSelection, rider: rider)
+            }
+        }
+    }
+}
+
+
+
+// MARK: Picker & Rider Image View
+struct PickerImageView: View {
+    
+    @Binding var tabSelection: Int
+    var rider: Rider
     
     var body: some View {
         VStack(spacing: 0) {
+            // Picker to tab content
             Picker("Select" ,selection: $tabSelection) {
                 Text("Bio").tag(1)
                 Text("Stats").tag(2)
@@ -25,36 +46,45 @@ struct RiderDetailView: View {
             
             Image("\(rider.riderImage)")
                 .resizable()
-//                .frame(width: .infinity, height: 400)
                 .scaledToFit()
-                .clipped()
-                
-                VStack(spacing: 0) {
-                    Rectangle()
-                        .frame(maxWidth: .infinity, maxHeight: 5)
-                        .foregroundColor(Color.ui.lightRed)
-                    
-                    if tabSelection == 1 {
-                        RiderBioTab(rider: rider)
-                    } else if tabSelection == 2 {
-                        RiderStatsTab(rider: rider)
-                    } else {
-                        Text("\(rider.team)")
-                    }
-                    
-                    Spacer()
-                }
-                .background(Color.white)
-//                .frame(maxHeight: 400)
+                .cornerRadius(12)
+//                .frame(height: 400)
+                .padding(.top)
             
             Spacer()
         }
         .padding(.top, 20)
-        .background(Color.white)
     }
 }
 
+// MARK: Tab Content View
+struct TabbedContentView: View {
+    @Binding var tabSelection: Int
+    var rider: Rider
+    
+    var body: some View {
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: 5)
+                    .foregroundColor(Color.ui.lightRed)
 
+                if tabSelection == 1 {
+                    RiderBioTab(rider: rider)
+                } else if tabSelection == 2 {
+                    RiderStatsTab(rider: rider)
+                } else {
+                    TimingScoringTab(rider: rider)
+                }
+
+                Spacer()
+            }
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .bottom)
+        }
+    }
+}
+
+// MARK: Tabs
 struct RiderBioTab: View {
     
     var rider: Rider
@@ -128,39 +158,58 @@ struct RiderBioTab: View {
 struct RiderStatsTab: View {
     var rider: Rider
     var body: some View {
-        
-        VStack {
-            Text("\(rider.name)")
-                .bold()
-                .font(.title3)
-                .padding(.vertical, 8)
-            
-            HStack(spacing: 40) {
-                Text("Wins: 12")
-                    .fontWeight(.semibold)
-                Text("Podiums: 21")
-                    .fontWeight(.semibold)
-            }
-            .font(.title3)
-            .frame(maxWidth: .infinity)
-            
-            Button {
-                // action
-            } label: {
-                Text("Watch Highlights")
+        GeometryReader { geo in
+            VStack(alignment: .center ,spacing: 20) {
+                Text("\(rider.name)")
                     .bold()
                     .font(.title3)
-                    .frame(width: 250, height: 50)
-                    .background(Color.ui.lightRed)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
+                    .padding(.top, 5)
                 
+                HStack(spacing: 40) {
+                    Text("Wins: 12")
+                        .fontWeight(.semibold)
+                    Text("Podiums: 21")
+                        .fontWeight(.semibold)
+                }
+                .font(.title3)
+                
+                Button {
+                    // action
+                } label: {
+                    Text("Watch Highlights")
+                        .bold()
+                        .font(.title3)
+                        .frame(width: 250, height: 50)
+                        .background(Color.ui.lightRed)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                    
+                }
             }
+            .frame(width: geo.size.width, height: geo.size.height)
         }
-        .frame(height: 250)
+        
+        
     }
 }
 
+struct TimingScoringTab: View {
+    
+    var rider: Rider
+    
+    var body: some View {
+        GeometryReader { geo in
+            VStack {
+                Text("Timing and Scoring")
+            }
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
+            .padding()
+        }
+    }
+}
+
+
+// Preview
 struct RiderDetailView_Previews: PreviewProvider {
     static var previews: some View {
         RiderDetailView(rider: RiderList.riders[8])

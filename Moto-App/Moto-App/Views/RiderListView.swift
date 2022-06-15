@@ -34,10 +34,12 @@ struct RiderListView: View {
 
 struct RiderCell: View {
     
+    @Environment(\.colorScheme) var colorScheme
     var rider: Rider
     var body: some View {
+        
         ZStack {
-            ZStack(alignment: .leading) {
+            GeometryReader { geo in
                 RoundedRectangle(cornerRadius: 8)
                     .fill(
                         LinearGradient(gradient: Gradient(stops: [
@@ -45,37 +47,44 @@ struct RiderCell: View {
                             .init(color: Color.ui.grayBlue, location: 0.10),
                         ]), startPoint: .leading, endPoint: .trailing)
                     )
-                    .frame(width: 110, height: 80)
+                    .frame(width: geo.size.width, height: geo.size.height)
             }
             
-            Image(rider.riderImage)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 60)
-                .cornerRadius(4)
+            HStack(spacing: 30) {
+                Image(rider.riderImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+                    .cornerRadius(4)
+                
+                
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(rider.name)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(colorScheme == .dark ? Color.white : Color.white)
+                    
+                    Label("\(rider.nationality)", systemImage: "flag")
+                        .font(.subheadline)
+                        .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.white.opacity(0.7))
+                    
+                    Text("MEDALLIA SUPERBIKE")
+                        .font(.subheadline)
+                        .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.white.opacity(0.7))
+                    
+                }
+            }
         }
-        
-        VStack(alignment: .leading, spacing: 5) {
-            Text(rider.name)
-                .font(.headline)
-                .fontWeight(.semibold)
-            
-            Label("\(rider.nationality)", systemImage: "flag")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
-            Text("MEDALLIA SUPERBIKE")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
-        }
-        
     }
+    
 }
+
 
 
 struct RiderListView_Previews: PreviewProvider {
     static var previews: some View {
         RiderListView(race: RaceList.classes.first!)
+        RiderListView(race: RaceList.classes.first!)
+            .preferredColorScheme(.dark)
     }
 }

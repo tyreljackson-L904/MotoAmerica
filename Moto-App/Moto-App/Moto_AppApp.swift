@@ -12,7 +12,7 @@ struct Moto_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RaceClassView(rider: RiderList.riders.first!)
+            MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!)
         }
     }
 }
