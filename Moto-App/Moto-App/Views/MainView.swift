@@ -21,47 +21,20 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ZStack {
+            ZStack {
+                GeometryReader { geo in
+//                    PlayerView()
+//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                        .scaledToFill()
+//                        .clipped()
+//                        .ignoresSafeArea()
                     
-                    Color.black
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    PlayerView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .scaledToFill()
-                        .ignoresSafeArea()
-                        .clipped()
-                    
-                    GeometryReader { geo in
-                        VStack(alignment: .center) {
-//                            Spacer()
-                            
-                            NavigationLink(destination: RaceClassView(rider: rider), label: {
-                                Text("Schedule")
-                                    .fontWeight(.semibold)
-                                    .modifier(TextModifier())
-                            })
-                            NavigationLink(destination: RaceClassView(rider: rider), label: {
-                                Text("Races")
-                                    .fontWeight(.semibold)
-                                    .modifier(TextModifier())
-                            })
-                            NavigationLink(destination: RaceClassView(rider: rider), label: {
-                                Text("Live Streaming")
-                                    .fontWeight(.semibold)
-                                    .modifier(TextModifier())
-                            })
-                            
-                        }
-                        .frame(width: geo.size.width, height: geo.size.height)
-                    }
+                    FloatingMenu(rider: rider)
                 }
             }
             .navigationBarHidden(true)
         }
         
-//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

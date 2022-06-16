@@ -156,6 +156,9 @@ struct RiderBioTab: View {
 }
 
 struct RiderStatsTab: View {
+    
+    @Environment(\.openURL) var openURL
+    
     var rider: Rider
     var body: some View {
         GeometryReader { geo in
@@ -174,7 +177,7 @@ struct RiderStatsTab: View {
                 .font(.title3)
                 
                 Button {
-                    // action
+                    openURL(URL(string:"https://www.motoamericaliveplus.com/viewplans")!)
                 } label: {
                     Text("Watch Highlights")
                         .bold()
