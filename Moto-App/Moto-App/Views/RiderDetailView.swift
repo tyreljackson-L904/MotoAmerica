@@ -13,15 +13,17 @@ struct RiderDetailView: View {
     var rider: Rider
     
     var body: some View {
-        
-        ZStack {
-            VStack{
-                PickerImageView(tabSelection: $tabSelection, rider: rider)
-                
-                Spacer()
-                
-                TabbedContentView(tabSelection: $tabSelection, rider: rider)
+        NavigationView {
+            ZStack {
+                VStack{
+                    PickerImageView(tabSelection: $tabSelection, rider: rider)
+                    
+                    Spacer()
+                    
+                    TabbedContentView(tabSelection: $tabSelection, rider: rider)
+                }
             }
+            .navigationBarHidden(true)
         }
     }
 }
@@ -48,7 +50,7 @@ struct PickerImageView: View {
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(12)
-//                .frame(height: 400)
+            //                .frame(height: 400)
                 .padding(.top)
             
             Spacer()
@@ -68,7 +70,7 @@ struct TabbedContentView: View {
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: 5)
                     .foregroundColor(Color.ui.lightRed)
-
+                
                 if tabSelection == 1 {
                     RiderBioTab(rider: rider)
                 } else if tabSelection == 2 {
@@ -76,7 +78,7 @@ struct TabbedContentView: View {
                 } else {
                     TimingScoringTab(rider: rider)
                 }
-
+                
                 Spacer()
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .bottom)
@@ -176,9 +178,8 @@ struct RiderStatsTab: View {
                 }
                 .font(.title3)
                 
-                Button {
-                    openURL(URL(string:"https://www.motoamericaliveplus.com/viewplans")!)
-                } label: {
+                
+                Link( destination: URL(string:"https://www.motoamericaliveplus.com/viewplans")!) {
                     Text("Watch Highlights")
                         .bold()
                         .font(.title3)
@@ -186,13 +187,11 @@ struct RiderStatsTab: View {
                         .background(Color.ui.lightRed)
                         .foregroundColor(.white)
                         .cornerRadius(12)
-                    
+                     
                 }
             }
             .frame(width: geo.size.width, height: geo.size.height)
         }
-        
-        
     }
 }
 

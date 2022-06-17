@@ -20,21 +20,39 @@ struct MainView: View {
     var race: RaceClass
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                GeometryReader { geo in
-//                    PlayerView()
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                        .scaledToFill()
-//                        .clipped()
-//                        .ignoresSafeArea()
-                    
-                    FloatingMenu(rider: rider)
+        TabView {
+            
+            TimingScoringView()
+                .tabItem{
+                    Image(systemName: "calendar")
+                    Text("Timing & Scoring")
                 }
-            }
-            .navigationBarHidden(true)
+
+            RaceClassView(rider: rider)
+                .tabItem{
+                    Image(systemName: "person")
+                    Text("Race Class")
+                }
         }
-        
+        .onAppear {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
+        //        NavigationView {
+        //            ZStack {
+        //                GeometryReader { geo in
+        //                    PlayerView()
+        //                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        //                        .scaledToFill()
+        //                        .clipped()
+        //                        .ignoresSafeArea()
+        //
+        //                    FloatingMenu(rider: rider)
+        //                }
+        //            }
+        //            .navigationBarHidden(true)
+        //        }
     }
 }
 

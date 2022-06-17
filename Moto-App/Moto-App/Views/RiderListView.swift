@@ -13,22 +13,29 @@ struct RiderListView: View {
     var race: RaceClass
     
     var body: some View {
+        
         VStack {
             List(riders, id: \.id) { rider in
                 NavigationLink(destination: RiderDetailView(rider: rider), label: {
                     HStack(spacing: 20) {
                         RiderCell(rider: rider)
                     }
+
                 })
+                .buttonStyle(PlainButtonStyle())
                 .listRowInsets(EdgeInsets())
                 .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
                 .padding(.vertical, 14)
+
+                
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white)
         .navigationTitle("\(race.name)")
         .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 

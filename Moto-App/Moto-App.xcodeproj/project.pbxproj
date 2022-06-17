@@ -14,6 +14,9 @@
 		A58132A92854514300B95C3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A82854514300B95C3E /* Preview Assets.xcassets */; };
 		A58132B12854F61F00B95C3E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58132B02854F61F00B95C3E /* Colors.swift */; };
 		A5AE482C2856785000F8F423 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = A5AE482B2856785000F8F423 /* NavigationStack */; };
+		A5B6F6C9285BD11B000A0A26 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6F6C8285BD11B000A0A26 /* SearchView.swift */; };
+		A5B6F6CB285BD171000A0A26 /* TimingScoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6F6CA285BD171000A0A26 /* TimingScoringView.swift */; };
+		A5B6F6CD285BEC4F000A0A26 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6F6CC285BEC4F000A0A26 /* Timing.swift */; };
 		A5B8D82C285522690075A8D8 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8D82B285522690075A8D8 /* Rider.swift */; };
 		A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */; };
 		A5E3238D28593AFC002C8D98 /* BackgroundVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */; };
@@ -33,6 +36,9 @@
 		A58132A52854514300B95C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58132A82854514300B95C3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A58132B02854F61F00B95C3E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A5B6F6C8285BD11B000A0A26 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A5B6F6CA285BD171000A0A26 /* TimingScoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingScoringView.swift; sourceTree = "<group>"; };
+		A5B6F6CC285BEC4F000A0A26 /* Timing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 		A5B8D82B285522690075A8D8 /* Rider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
 		A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderDetailView.swift; sourceTree = "<group>"; };
 		A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideo.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 			children = (
 				A5B8D82B285522690075A8D8 /* Rider.swift */,
 				A5EC673C28556B9100AAA97C /* RaceClass.swift */,
+				A5B6F6CC285BEC4F000A0A26 /* Timing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +137,8 @@
 				A5E859982858CB04003A9DBE /* MainView.swift */,
 				A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */,
 				A5E32397285A2238002C8D98 /* FloatingMenu.swift */,
+				A5B6F6C8285BD11B000A0A26 /* SearchView.swift */,
+				A5B6F6CA285BD171000A0A26 /* TimingScoringView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,12 +226,15 @@
 				A5B8D82C285522690075A8D8 /* Rider.swift in Sources */,
 				A5EC673D28556B9100AAA97C /* RaceClass.swift in Sources */,
 				A58132A42854514000B95C3E /* RiderListView.swift in Sources */,
+				A5B6F6CD285BEC4F000A0A26 /* Timing.swift in Sources */,
 				A58132B12854F61F00B95C3E /* Colors.swift in Sources */,
 				A5EC673A285556DA00AAA97C /* RaceClassView.swift in Sources */,
 				A5E859992858CB04003A9DBE /* MainView.swift in Sources */,
 				A58132A22854514000B95C3E /* Moto_AppApp.swift in Sources */,
 				A5E3238D28593AFC002C8D98 /* BackgroundVideo.swift in Sources */,
 				A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */,
+				A5B6F6CB285BD171000A0A26 /* TimingScoringView.swift in Sources */,
+				A5B6F6C9285BD11B000A0A26 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

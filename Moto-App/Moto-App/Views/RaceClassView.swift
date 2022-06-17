@@ -14,16 +14,20 @@ struct RaceClassView: View {
     var rider: Rider
     
     var body: some View {
-        List(raceClass, id: \.id) { race in
-            NavigationLink(destination: RiderListView(race: race), label: {
-                RaceClassCell(raceClass: race)
-            })
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(Color.clear)
-            .padding()
+        NavigationView {
+            List(raceClass, id: \.id) { race in
+                NavigationLink(destination: RiderListView(race: race), label: {
+                    RaceClassCell(raceClass: race)
+                })
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .padding()
+            }
+            .navigationTitle("Race Class")
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
+            }
         }
-        .navigationTitle("Race Class")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

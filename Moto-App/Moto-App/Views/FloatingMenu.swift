@@ -13,36 +13,59 @@ struct FloatingMenu: View {
     @State var showMenuItem2 = false
     @State var showMenuItem3 = false
     
+    //    var navigationData: [String]
+    
     var rider: Rider
     
     var body: some View {
-        
-        VStack(alignment: .trailing) {
-            
-            Spacer()
-            if showMenuItem1 {
-                NavigationLink(destination: RaceClassView(rider: rider), label: {
-                    MenuItem(icon: "person.fill", label: "Classes")
-                })
+//        VStack(alignment: .trailing) {
+            List {
+                VStack(alignment: .trailing) {
+                    
+                    if showMenuItem1 {
+                        NavigationLink(destination: RaceClassView(rider: rider), label: {
+                            HStack {
+                                Spacer()
+                                MenuItem(icon: "person.fill", label: "Classes", rider: rider)
+                            }
+                        })
+                    }
+                    if showMenuItem2 {
+                        NavigationLink(destination: RaceClassView(rider: rider), label: {
+                            HStack {
+                                Spacer()
+                                MenuItem(icon: "calendar", label: "Schedule", rider: rider)
+                            }
+                        })
+                    }
+                    if showMenuItem3 {
+                        NavigationLink(destination: RaceClassView(rider: rider), label: {
+                            HStack {
+                                Spacer()
+                                MenuItem(icon: "video.fill", label: "Live Streaming", rider: rider)
+                            }
+                        })
+                    }
+                    
+                    MenuButton(showMenuItem1: $showMenuItem1, showMenuItem2: $showMenuItem2, showMenuItem3: $showMenuItem3)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.trailing)
+                .padding(.bottom)
+                .edgesIgnoringSafeArea(.all)
+                
             }
-            if showMenuItem2 {
-                NavigationLink(destination: RaceClassView(rider: rider), label: {
-                    MenuItem(icon: "calendar", label: "Schedule")
-                })
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
+            .onAppear {
+                UITableView.appearance().backgroundColor = .clear
             }
-            if showMenuItem3 {
-                NavigationLink(destination: RaceClassView(rider: rider), label: {
-                    MenuItem(icon: "video.fill", label: "Live Streaming")
-                })
-            }
-            
-            MenuButton(showMenuItem1: $showMenuItem1, showMenuItem2: $showMenuItem2, showMenuItem3: $showMenuItem3)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.trailing)
-        .padding(.bottom)
-        .edgesIgnoringSafeArea(.all)
+//        }
     }
+    
+    //    func getDestination() -> AnyView {
+    //       return
+    //    }
 }
 
 struct FloatingMenu_Previews: PreviewProvider {
@@ -58,9 +81,13 @@ struct FloatingMenu_Previews: PreviewProvider {
 
 struct MenuItem: View {
     @Environment(\.colorScheme) var colorScheme
+    //    @Binding var showMenuItem1: Bool
+    //    @Binding var showMenuItem2: Bool
+    //    @Binding var showMenuItem3: Bool
     
     var icon: String
     var label: String
+    var rider: Rider
     
     var body: some View {
         HStack {
@@ -71,7 +98,7 @@ struct MenuItem: View {
                 .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
             
             Button {
-                //
+                //                    self.showMenuItem1 = true
             } label: {
                 ZStack {
                     Circle()
@@ -85,6 +112,7 @@ struct MenuItem: View {
             }
         }
         .transition(.move(edge: .trailing))
+        
     }
 }
 
