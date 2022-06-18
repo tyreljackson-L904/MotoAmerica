@@ -18,11 +18,12 @@ struct MainView: View {
     @State var selection = ""
     var rider: Rider
     var race: RaceClass
+    var timing: TimingDataModel
     
     var body: some View {
         TabView {
             
-            TimingScoringView()
+            TimingScoringView(timing: timing)
                 .tabItem{
                     Image(systemName: "calendar")
                     Text("Timing & Scoring")
@@ -69,10 +70,11 @@ struct TextModifier: ViewModifier {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!)
+        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!, timing: TimingData.timing.first!)
             .previewInterfaceOrientation(.portrait)
+//            .preferredColorScheme(.dark)
         
-        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!)
+        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!, timing: TimingData.timing.first!)
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

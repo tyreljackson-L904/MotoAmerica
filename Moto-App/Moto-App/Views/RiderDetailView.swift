@@ -170,7 +170,7 @@ struct TimingScoringTab: View {
 struct RiderDetailView_Previews: PreviewProvider {
     static var previews: some View {
         RiderDetailView(rider: RiderList.riders[0])
-            .previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
 
