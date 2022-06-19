@@ -48,10 +48,11 @@ struct TimingScoringView: View {
             
             Divider()
             
-            TableView(timing: [timing])
+            TableView(timing: timing)
             
             Spacer()
         }
+        .padding(.top, 25)
     }
 }
 
@@ -132,7 +133,7 @@ struct TableHeaderView: View {
 
 struct TableView: View {
     
-    let timing: [TimingDataModel]
+    let timing: TimingDataModel
     let columns = Array(repeating: GridItem(.flexible(minimum: 20)), count: 5)
     let columnTitles = ["POS", "NUM", "NAME", "MAKE", "BEST LAP"]
     
@@ -140,13 +141,18 @@ struct TableView: View {
         LazyVGrid(columns: columns) {
             
             // columnTitle row
-            
             ForEach(0..<5) { titles in
                 Text(columnTitles[titles]).bold()
-                ForEach(timing, id: \.self) { data in
-                    
+            }
+            .padding(.bottom)
+            
+            // rows
+            ForEach(Array(arrayLiteral: timing), id: \.self) { row in
+                HStack {
+                    Text("\(timing.position)")
                 }
             }
+            
         }
     }
 }
