@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-//struct TimingDataModel: Identifiable {
-//    let id: Rider.ID
-//    let position: Int
-//    let num: Int
-//    let name: String
-//    let make: String
-//    let bestLap: Double
-//}
-//
-//struct RaceDataModel: Identifiable {
-//    let id = UUID()
-//    let elapsed: Double
-//    let lapsToGo: Int
-//    let time: Double
-//}
+struct TimingDataModel: Identifiable, Hashable {
+    let id = UUID()
+    
+    let position: Int
+    let num: Int
+    let name: String
+    let make: String
+    let bestLap: String
+}
+
+struct RaceDataModel: Identifiable {
+    let id = UUID()
+    
+    let elapsed: Double
+    let lapsToGo: Int
+    let time: Double
+}
 

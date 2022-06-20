@@ -18,17 +18,18 @@ struct MainView: View {
     @State var selection = ""
     var rider: Rider
     var race: RaceClass
-    var timing: TimingDataModel
     
     var body: some View {
         TabView {
             
-            TimingScoringView(timing: timing)
+            // MARK: Timing/Scoring Tab View
+            TimingScoringView()
                 .tabItem{
                     Image(systemName: "calendar")
                     Text("Timing & Scoring")
                 }
-
+            
+            // MARK: Race Class Tab View
             RaceClassView(rider: rider)
                 .tabItem{
                     Image(systemName: "person")
@@ -40,6 +41,8 @@ struct MainView: View {
             tabBarAppearance.configureWithDefaultBackground()
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
+        
+        // MARK: PLAYER VIEW
         //        NavigationView {
         //            ZStack {
         //                GeometryReader { geo in
@@ -70,11 +73,12 @@ struct TextModifier: ViewModifier {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!, timing: TimingData.timing.first!)
+        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!)
             .previewInterfaceOrientation(.portrait)
 //            .preferredColorScheme(.dark)
         
-        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!, timing: TimingData.timing.first!)
+        MainView(rider: RiderList.riders.first!, race: RaceList.classes.first!)
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
+

@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct RiderListView: View {
+public struct RiderListView: View {
     
     var riders: [Rider] = RiderList.riders
     var race: RaceClass
     
-    var body: some View {
+    public var body: some View {
         
         VStack {
             List(riders, id: \.id) { rider in
@@ -39,11 +39,20 @@ struct RiderListView: View {
     }
 }
 
-struct RiderCell: View {
+struct RiderListView_Previews: PreviewProvider {
+    static var previews: some View {
+        RiderListView(race: RaceList.classes.first!)
+        RiderListView(race: RaceList.classes.first!)
+            .preferredColorScheme(.dark)
+    }
+}
+
+public struct RiderCell: View {
     
     @Environment(\.colorScheme) var colorScheme
     var rider: Rider
-    var body: some View {
+    
+    public var body: some View {
         
         ZStack {
             GeometryReader { geo in
@@ -84,14 +93,4 @@ struct RiderCell: View {
         }
     }
     
-}
-
-
-
-struct RiderListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RiderListView(race: RaceList.classes.first!)
-        RiderListView(race: RaceList.classes.first!)
-            .preferredColorScheme(.dark)
-    }
 }
