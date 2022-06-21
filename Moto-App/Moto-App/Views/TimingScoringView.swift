@@ -78,10 +78,13 @@ public struct TableHeaderView: View {
 // MARK: Table Data
 public struct TableView: View {
     
+    // rider quick view modal
+    @State private var showModal = false
+    
     // Header Properties
-    var columns = Array(repeating: GridItem(.flexible(minimum: 20)), count: 5)
+    var columns = [GridItem(.fixed(50)), GridItem(.fixed(50)), GridItem(.fixed(100)), GridItem(.fixed(50)), GridItem(.fixed(80))]
     var columnTitles = ["POS", "NUM", "NAME", "MAKE", "BEST LAP"]
-    var formatter = DateComponentsFormatter()
+    //    var formatter = DateComponentsFormatter()
     
     // Riders data model
     var riders = [
@@ -98,57 +101,50 @@ public struct TableView: View {
     ]
     // Rider dictionary
     
-        
     public var body: some View {
         VStack {
-            List(0..<10, id: \.self) { row in
-                HStack {
+            HStack(spacing: 40) {
+                LazyVGrid(columns: columns) {
                     ForEach(0..<5) { title in
                         Text(columnTitles[title])
+                            .font(.system(size: 12))
+                            .bold()
                     }
-                    .listRowInsets(EdgeInsets())
+                    .padding(.vertical)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            
+            List(riders, id: \.self) { rider in
+                LazyVGrid(columns: columns) {
+                    
+                    Text("\(rider.position)")
+                        .font(.system(size: 12))
+                        .bold()
+                    Text("\(rider.num)")
+                        .font(.system(size: 12))
+                        .bold()
+                    
+                    Text("\(rider.name)")
+                        .font(.system(size: 12))
+                        .bold()
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("\(rider.make)")
+                        .font(.system(size: 12))
+                        .bold()
+                    Text("\(rider.bestLap)")
+                        .font(.system(size: 12))
+                        .bold()
+                    
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 22)
-                .listRowBackground(row % 2 == 0 ? Color.gray : Color.gray.opacity(0.4))
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(rider.position % 2 == 0 ? Color.white : Color.gray.opacity(0.4))
+                .padding(.vertical)
             }
             .listStyle(PlainListStyle())
         }
     }
 }
-
-
-
-
-
-
-//            LazyVGrid(columns: columns) {
-//
-//                // columnTitle row
-//                ForEach(0..<5) { titles in
-//                    Text(columnTitles[titles]).bold()
-//                }
-//                .padding(.bottom)
-//            }
-            
-//            List(riders.count, id: \.self) { count in
-//                LazyVGrid(columns: columns) {
-//                    ForEach(0..<5) { titles in
-//                        Text(columnTitles[titles])
-//                        ForEach(riders, id: \.self) { rider in
-//                            HStack(alignment: .center, spacing: 30) {
-//                                Text("\(rider.position)")
-//                                Text("\(rider.num)")
-//                                Text("\(rider.name)")
-//                                Text("\(rider.make)")
-//                                Text("\(rider.bestLap)")
-//                            }
-//                            .frame(maxWidth: .infinity)
-//                            .listRowInsets(EdgeInsets())
-//                            .listRowBackground(Color.clear)
-//                        }
-//
-//                    }
-//                }
-//            }
-//            .background(Color.white)
