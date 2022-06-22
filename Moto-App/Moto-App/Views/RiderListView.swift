@@ -71,7 +71,8 @@ public struct RiderCell: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 100)
-                    .cornerRadius(4)
+                    .clipShape(Circle())
+                    .padding(.leading)
                 
                 
                 VStack(alignment: .leading, spacing: 5) {
@@ -80,15 +81,17 @@ public struct RiderCell: View {
                         .fontWeight(.semibold)
                         .foregroundColor(colorScheme == .dark ? Color.white : Color.white)
                     
-                    Label("\(rider.nationality)", systemImage: "flag")
+                    Text("#\(rider.bikeNumber)")
                         .font(.subheadline)
                         .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.white.opacity(0.7))
                     
-                    Text("MEDALLIA SUPERBIKE")
+                    Text(rider.bike)
                         .font(.subheadline)
                         .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.white.opacity(0.7))
                     
                 }
+                
+                Spacer()
             }
         }
     }

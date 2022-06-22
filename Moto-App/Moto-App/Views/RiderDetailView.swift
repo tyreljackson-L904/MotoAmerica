@@ -50,8 +50,7 @@ struct PickerImageView: View {
             Image("\(rider.riderImage)")
                 .resizable()
                 .scaledToFit()
-                .cornerRadius(12)
-            //                .frame(height: 400)
+                .clipShape(Circle())
                 .padding(.top)
             
             Spacer()
@@ -170,7 +169,6 @@ struct TimingScoringTab: View {
 struct RiderDetailView_Previews: PreviewProvider {
     static var previews: some View {
         RiderDetailView(rider: RiderList.riders[0])
-            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
 
