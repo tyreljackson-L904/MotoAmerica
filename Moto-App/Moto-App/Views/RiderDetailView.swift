@@ -18,8 +18,6 @@ struct RiderDetailView: View {
                 VStack{
                     PickerImageView(tabSelection: $tabSelection, rider: rider)
                     
-                    Spacer()
-                    
                     TabbedContentView(tabSelection: $tabSelection, rider: rider)
                 }
             }
@@ -50,12 +48,11 @@ struct PickerImageView: View {
             Image("\(rider.riderImage)")
                 .resizable()
                 .scaledToFit()
-                .clipShape(Circle())
-                .padding(.top)
-            
-            Spacer()
+                .cornerRadius(10)
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
+                .background(Color.ui.grayBlue)
         }
-        .padding(.top, 20)
     }
 }
 
@@ -79,9 +76,9 @@ struct TabbedContentView: View {
                     TimingScoringTab(rider: rider)
                 }
                 
-                Spacer()
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .bottom)
+            .animation(.easeInOut, value: tabSelection)
         }
     }
 }
@@ -133,7 +130,7 @@ struct RiderStatsTab: View {
                 .font(.title3)
                 
                 
-                Link( destination: URL(string:"https://www.motoamericaliveplus.com/viewplans")!) {
+                Link(destination: URL(string:"https://www.motoamericaliveplus.com/viewplans")!) {
                     Text("Watch Highlights")
                         .bold()
                         .font(.title3)
@@ -285,7 +282,7 @@ struct TimingScoringTab: View {
 // Preview
 struct RiderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RiderDetailView(rider: RiderList.riders[0])
+        RiderDetailView(rider: RiderList.riders[1])
     }
 }
 
