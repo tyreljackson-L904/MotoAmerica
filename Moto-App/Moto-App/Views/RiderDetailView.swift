@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RiderDetailView: View {
     
-    @State var tabSelection = 3
+    @State var tabSelection = 1
     var rider: Rider
     
     var body: some View {
@@ -45,13 +45,26 @@ struct PickerImageView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             
-            Image("\(rider.riderImage)")
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-                .padding(.vertical)
-                .frame(maxWidth: .infinity)
-                .background(Color.ui.grayBlue)
+            GeometryReader { geo in
+                ZStack {
+                    Rectangle()
+                        .fill(
+                            LinearGradient(gradient: Gradient(stops: [
+                                .init(color: Color.ui.lightRed, location: 0.03),
+                                .init(color: Color.ui.grayBlue, location: 0.03),
+                            ]), startPoint: .leading, endPoint: .trailing)
+                        )
+                        .frame(width: geo.size.width, height: geo.size.height)
+                    
+                    Image("\(rider.riderImage)")
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity)
+//                        .background(Color.ui.grayBlue)
+                }
+            }
         }
     }
 }
@@ -64,9 +77,9 @@ struct TabbedContentView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: 0) {
-                Rectangle()
-                    .frame(maxWidth: .infinity, maxHeight: 5)
-                    .foregroundColor(Color.ui.lightRed)
+//                Rectangle()
+//                    .frame(maxWidth: .infinity, maxHeight: 5)
+//                    .foregroundColor(Color.ui.lightRed)
                 
                 if tabSelection == 1 {
                     RiderBioTab(rider: rider)

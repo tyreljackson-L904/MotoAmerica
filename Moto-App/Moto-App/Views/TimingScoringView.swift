@@ -9,6 +9,8 @@ import SwiftUI
 
 public struct TimingScoringView: View {
     
+    var rider: Rider
+    
     public var body: some View {
         NavigationView {
             VStack {
@@ -16,7 +18,7 @@ public struct TimingScoringView: View {
                 
                 Divider()
                 
-                TableView()
+                TableView(rider: rider)
                 
                 Spacer()
             }
@@ -28,8 +30,8 @@ public struct TimingScoringView: View {
 
 public struct TimingScoringView_Previews: PreviewProvider {
     public static var previews: some View {
-        TimingScoringView()
-        TimingScoringView()
+        TimingScoringView(rider: RiderList.riders.first!)
+        TimingScoringView(rider: RiderList.riders.first!)
             .preferredColorScheme(.dark)
     }
 }
@@ -80,12 +82,16 @@ public struct TableHeaderView: View {
 
 // MARK: Table Data
 public struct TableView: View {
+    @State private var showModal = false
+    
     // Header Properties
     var columns = [GridItem(.fixed(50)), GridItem(.fixed(50)), GridItem(.fixed(100)), GridItem(.fixed(50)), GridItem(.fixed(80))]
+    
     var columnTitles = ["POS", "NUM", "NAME", "MAKE", "BEST LAP"]
     
     // Riders data model
     var riderData: [TimingDataModel] = RiderTiming.riderTiming
+    var rider: Rider
     
     public var body: some View {
         
@@ -111,11 +117,20 @@ public struct TableView: View {
                     Text("\(data.num)")
                         .font(.system(size: 12))
                         .bold()
-                    Text("\(data.name)")
-                        .font(.system(size: 12))
-                        .bold()
-                        .foregroundColor(.red)
-                        .multilineTextAlignment(.center)
+                    
+                    Button {
+                        showModal.toggle()
+                    } label: {
+                        Text("\(data.name)")
+                            .font(.system(size: 12))
+                            .bold()
+                            .foregroundColor(.red)
+                            .multilineTextAlignment(.center)
+                    }
+                    .sheet(isPresented: $showModal) {
+                        RiderModalView(rider: rider)
+                    }
+
                     Text("\(data.make)")
                         .font(.system(size: 12))
                         .bold()
@@ -129,17 +144,6 @@ public struct TableView: View {
                 .padding(.vertical)
             }
             .listStyle(PlainListStyle())
-        }
-    }
-}
-
-public struct RiderQuickView: View {
-    var rider: Rider
-    public var body: some View {
-        HStack {
-            Image(rider.riderImage)
-                .resizable()
-                .scaledToFit()
         }
     }
 }

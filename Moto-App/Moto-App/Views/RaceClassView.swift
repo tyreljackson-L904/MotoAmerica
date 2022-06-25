@@ -31,28 +31,6 @@ struct RaceClassView: View {
     }
 }
 
-struct RaceClassCell: View {
-    
-    var raceClass: RaceClass
-    
-    var body: some View {
-        HStack{
-            Image(raceClass.imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100,height: 70)
-            
-            Spacer()
-            
-            Text("\(raceClass.name)")
-                .font(.headline)
-                .lineLimit(2)
-                .minimumScaleFactor(0.5)
-        }
-        
-    }
-}
-
 struct RaceClassView_Previews: PreviewProvider {
     static var previews: some View {
         RaceClassView(rider: RiderList.riders.first!)

@@ -23,7 +23,7 @@ struct MainView: View {
         TabView {
             
             // MARK: Timing/Scoring Tab View
-            TimingScoringView()
+            TimingScoringView(rider: rider)
                 .tabItem{
                     Image(systemName: "calendar")
                     Text("Timing & Scoring")

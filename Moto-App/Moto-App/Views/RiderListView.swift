@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-public struct RiderListView: View {
+struct RiderListView: View {
     
     var riders: [Rider] = RiderList.riders
     var race: RaceClass
     
-    public var body: some View {
+    var body: some View {
         
         VStack {
             List(riders, id: \.id) { rider in
@@ -28,7 +28,6 @@ public struct RiderListView: View {
                 .listRowSeparator(.hidden)
                 .padding(.vertical, 14)
 
-                
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -47,20 +46,20 @@ struct RiderListView_Previews: PreviewProvider {
     }
 }
 
-public struct RiderCell: View {
+struct RiderCell: View {
     
     @Environment(\.colorScheme) var colorScheme
     var rider: Rider
     
-    public var body: some View {
+    var body: some View {
         
         ZStack {
             GeometryReader { geo in
                 RoundedRectangle(cornerRadius: 8)
                     .fill(
                         LinearGradient(gradient: Gradient(stops: [
-                            .init(color: Color.ui.lightRed, location: 0.10),
-                            .init(color: Color.ui.grayBlue, location: 0.10),
+                            .init(color: Color.ui.lightRed, location: 0.03),
+                            .init(color: Color.ui.grayBlue, location: 0.03),
                         ]), startPoint: .leading, endPoint: .trailing)
                     )
                     .frame(width: geo.size.width, height: geo.size.height)
@@ -72,7 +71,7 @@ public struct RiderCell: View {
                     .scaledToFit()
                     .frame(height: 100)
                     .clipShape(Circle())
-                    .padding(.leading)
+                    .padding(.leading, 20)
                 
                 
                 VStack(alignment: .leading, spacing: 5) {
