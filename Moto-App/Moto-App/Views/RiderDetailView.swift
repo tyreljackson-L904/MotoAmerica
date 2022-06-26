@@ -14,12 +14,18 @@ struct RiderDetailView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                VStack{
-                    PickerImageView(tabSelection: $tabSelection, rider: rider)
-                    
-                    TabbedContentView(tabSelection: $tabSelection, rider: rider)
+            VStack{
+                // Picker to tab content
+                Picker("Select" ,selection: $tabSelection) {
+                    Text("Bio").tag(1)
+                    Text("Stats").tag(2)
+                    Text("Timing & Scoring").tag(3)
                 }
+                .pickerStyle(SegmentedPickerStyle())
+                
+                RiderImageView(tabSelection: $tabSelection, rider: rider)
+                
+                TabbedContentView(tabSelection: $tabSelection, rider: rider)
             }
             .navigationBarHidden(true)
         }
@@ -29,41 +35,66 @@ struct RiderDetailView: View {
 
 
 
-// MARK: Picker & Rider Image View
-struct PickerImageView: View {
+// MARK: Rider Image View
+struct RiderImageView: View {
     
     @Binding var tabSelection: Int
     var rider: Rider
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Picker to tab content
-            Picker("Select" ,selection: $tabSelection) {
-                Text("Bio").tag(1)
-                Text("Stats").tag(2)
-                Text("Timing & Scoring").tag(3)
-            }
-            .pickerStyle(SegmentedPickerStyle())
+            
+        ZStack {
+            Rectangle()
+                .fill(
+                    LinearGradient(gradient: Gradient(stops: [
+                        .init(color: Color.ui.lightRed, location: 0.01),
+                        .init(color: Color.ui.grayBlue, location: 0.02),
+                        .init(color: Color.white, location: 2.6)
+                    ]), startPoint: .leading, endPoint: .trailing)
+                )
+                .frame(maxWidth: .infinity)
+                .padding(.top, 70)
+            
+            Image("\(rider.riderImage)")
+                .resizable()
+                .frame(maxWidth: .infinity)
+                .scaledToFit()
+                .cornerRadius(10)
+                .padding(.vertical)
+            
+            
+            LinearGradient(gradient: Gradient(stops: [
+                .init(color: .clear, location: 0.5),
+                .init(color: .black, location: 0.8)
+            ]), startPoint: .top, endPoint: .bottom)
             
             GeometryReader { geo in
-                ZStack {
-                    Rectangle()
-                        .fill(
-                            LinearGradient(gradient: Gradient(stops: [
-                                .init(color: Color.ui.lightRed, location: 0.03),
-                                .init(color: Color.ui.grayBlue, location: 0.03),
-                            ]), startPoint: .leading, endPoint: .trailing)
-                        )
-                        .frame(width: geo.size.width, height: geo.size.height)
+                VStack {
+                    Spacer()
                     
-                    Image("\(rider.riderImage)")
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                        .frame(maxWidth: .infinity)
-//                        .background(Color.ui.grayBlue)
+                    HStack {
+                        Text("#\(rider.bikeNumber)")
+                            .font(.system(size: 60))
+                            .bold()
+                            .italic()
+                            .foregroundColor(.white.opacity(0.35))
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .leading, spacing: 5) {
+                            RiderDataRow(rider: rider, label: "Name: ", data: rider.name)
+                                .foregroundColor(.white)
+                            RiderDataRow(rider: rider, label: "Team: ", data: rider.team)
+                                .foregroundColor(.white)
+                            RiderDataRow(rider: rider, label: "Bike: ", data: rider.bike)
+                                .foregroundColor(.white)
+                        }
+                        
+                        Spacer()
+                    }.padding()
                 }
+                .frame(maxWidth: .infinity)
+                .frame(height: geo.size.height)
             }
         }
     }
@@ -75,11 +106,8 @@ struct TabbedContentView: View {
     var rider: Rider
     
     var body: some View {
-        GeometryReader { geo in
+        
             VStack(spacing: 0) {
-//                Rectangle()
-//                    .frame(maxWidth: .infinity, maxHeight: 5)
-//                    .foregroundColor(Color.ui.lightRed)
                 
                 if tabSelection == 1 {
                     RiderBioTab(rider: rider)
@@ -90,9 +118,7 @@ struct TabbedContentView: View {
                 }
                 
             }
-            .frame(width: geo.size.width, height: geo.size.height, alignment: .bottom)
             .animation(.easeInOut, value: tabSelection)
-        }
     }
 }
 
@@ -104,13 +130,10 @@ struct RiderBioTab: View {
         ScrollView(.vertical, showsIndicators: false) {
             HStack {
                 VStack(alignment: .leading, spacing: 10){
-                    RiderDataRow(rider: rider, label: "Name: ", data: rider.name)
-                    RiderDataRow(rider: rider, label: "Date of Birth: ", data: rider.dob)
+                    RiderDataRow(rider: rider, label: "Born: ", data: rider.dob)
                     RiderDataRow(rider: rider, label: "Hometown: ", data: rider.hometown)
                     RiderDataRow(rider: rider, label: "Height: ", data:     rider.height)
                     RiderDataRow(rider: rider, label: "Weight: ", data: String(rider.weight))
-                    RiderDataRow(rider: rider, label: "Team: ", data: rider.team)
-                    RiderDataRow(rider: rider, label: "Bike: ", data: rider.bike)
                     RiderDataRow(rider: rider, label: "Sponsors: ", data: rider.sponsors.joined(separator: ", "))
                 }
                 .padding()
@@ -313,5 +336,6 @@ struct RiderDataRow: View {
                 .fontWeight(.semibold)
             + Text(data)
         }
+        
     }
 }

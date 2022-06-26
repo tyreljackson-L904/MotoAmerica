@@ -127,9 +127,9 @@ public struct TableView: View {
                             .foregroundColor(.red)
                             .multilineTextAlignment(.center)
                     }
-                    .sheet(isPresented: $showModal) {
-                        RiderModalView(rider: rider)
-                    }
+//                    .sheet(isPresented: $showModal) {
+//                        RiderModalView(rider: rider)
+//                    }
 
                     Text("\(data.make)")
                         .font(.system(size: 12))

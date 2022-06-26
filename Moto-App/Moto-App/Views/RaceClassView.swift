@@ -10,8 +10,11 @@ import SwiftUI
 struct RaceClassView: View {
     
     @State private var overText = false
+    @State private var searchText = ""
+    @State private var isEditing = false
     var raceClass: [RaceClass] = RaceList.classes
     var rider: Rider
+    var riders: [Rider] = RiderList.riders
     
     var body: some View {
         NavigationView {
@@ -23,7 +26,7 @@ struct RaceClassView: View {
                 .listRowBackground(Color.clear)
                 .padding()
             }
-            .navigationTitle("Race Class")
+            .navigationTitle("Race Classes")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
             }
