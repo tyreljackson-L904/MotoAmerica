@@ -22,6 +22,7 @@
 		A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */; };
 		A5D620AE28667456006A8201 /* RaceClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D620AD28667456006A8201 /* RaceClassCell.swift */; };
 		A5D620B02866C0F4006A8201 /* RiderModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D620AF2866C0F4006A8201 /* RiderModalView.swift */; };
+		A5D620B2286917D0006A8201 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D620B1286917D0006A8201 /* Dropdown.swift */; };
 		A5E0E48628625E920010D1EE /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0E48528625E920010D1EE /* DataView.swift */; };
 		A5E3238D28593AFC002C8D98 /* BackgroundVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */; };
 		A5E323922859426D002C8D98 /* testVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A5E323912859426D002C8D98 /* testVideo.mp4 */; };
@@ -48,6 +49,7 @@
 		A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderDetailView.swift; sourceTree = "<group>"; };
 		A5D620AD28667456006A8201 /* RaceClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClassCell.swift; sourceTree = "<group>"; };
 		A5D620AF2866C0F4006A8201 /* RiderModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderModalView.swift; sourceTree = "<group>"; };
+		A5D620B1286917D0006A8201 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		A5E0E48528625E920010D1EE /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideo.swift; sourceTree = "<group>"; };
 		A5E323912859426D002C8D98 /* testVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = testVideo.mp4; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				A5D620AD28667456006A8201 /* RaceClassCell.swift */,
 				A5D620AF2866C0F4006A8201 /* RiderModalView.swift */,
+				A5D620B1286917D0006A8201 /* Dropdown.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				A5E859992858CB04003A9DBE /* MainView.swift in Sources */,
 				A58132A22854514000B95C3E /* Moto_AppApp.swift in Sources */,
 				A5E3238D28593AFC002C8D98 /* BackgroundVideo.swift in Sources */,
+				A5D620B2286917D0006A8201 /* Dropdown.swift in Sources */,
 				A5E0E48628625E920010D1EE /* DataView.swift in Sources */,
 				A5C19A952864EA7A00C738A5 /* TextModifier.swift in Sources */,
 				A5D620B02866C0F4006A8201 /* RiderModalView.swift in Sources */,

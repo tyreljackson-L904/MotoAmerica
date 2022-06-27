@@ -82,7 +82,7 @@ struct RiderImageView: View {
                         Spacer()
                         
                         VStack(alignment: .leading, spacing: 5) {
-                            RiderDataRow(rider: rider, label: "Name: ", data: rider.name)
+                            RiderDataRow(rider: rider, label: "", data: rider.name)
                                 .foregroundColor(.white)
                             RiderDataRow(rider: rider, label: "Team: ", data: rider.team)
                                 .foregroundColor(.white)
@@ -132,9 +132,17 @@ struct RiderBioTab: View {
                 VStack(alignment: .leading, spacing: 10){
                     RiderDataRow(rider: rider, label: "Born: ", data: rider.dob)
                     RiderDataRow(rider: rider, label: "Hometown: ", data: rider.hometown)
-                    RiderDataRow(rider: rider, label: "Height: ", data:     rider.height)
-                    RiderDataRow(rider: rider, label: "Weight: ", data: String(rider.weight))
+                    
+                    HStack {
+                        RiderDataRow(rider: rider, label: "Height: ", data:     rider.height)
+                        Divider()
+                            .background(Color.black)
+                            .frame(width: 10, height: 20)
+                        RiderDataRow(rider: rider, label: "Weight: ", data: String(rider.weight))
+                    }
+                    
                     RiderDataRow(rider: rider, label: "Sponsors: ", data: rider.sponsors.joined(separator: ", "))
+                        .lineSpacing(2)
                 }
                 .padding()
                 
@@ -184,6 +192,7 @@ struct RiderStatsTab: View {
 
 struct TimingScoringTab: View {
     
+    @Environment(\.colorScheme) var colorScheme
     var rider: Rider
     var races = [
         "Daytona 200",
@@ -293,23 +302,19 @@ struct TimingScoringTab: View {
 //            .frame(maxWidth: geo.size.width)
 //            .frame(height: geo.size.height)
 //            .padding()
-       
-            List {
-                ForEach(races, id: \.self) { race in
-                    Button {
-                        // dropdown menu
-                    } label: {
-                        Text(race)
-                            .font(.headline)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+            withAnimation {
+                List {
+                    ForEach(races, id: \.self) { race in
+                        Dropdown(label: race, content: ["String" : "String"])
                     }
+                    .accentColor(Color.ui.lightRed)
                 }
-                .frame(height: 40)
+                .listStyle(PlainListStyle())
+                .listRowBackground(Color.black)
+                .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
+                }
             }
-            .listStyle(PlainListStyle())
-            .listRowBackground(Color.black)
-            .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
-            }
+            
         }
     }
 }
@@ -318,7 +323,9 @@ struct TimingScoringTab: View {
 // Preview
 struct RiderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RiderDetailView(rider: RiderList.riders[1])
+        RiderDetailView(rider: RiderList.riders[4])
+        RiderDetailView(rider: RiderList.riders[4])
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -335,7 +342,7 @@ struct RiderDataRow: View {
                 .font(.headline)
                 .fontWeight(.semibold)
             + Text(data)
+//                .fontWeight(.semibold)
         }
-        
     }
 }
