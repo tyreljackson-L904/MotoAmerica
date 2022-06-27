@@ -38,9 +38,6 @@ struct Dropdown: View {
             }
         }
         .padding()
-        .onTapGesture {
-            self.isExpanded.toggle()
-        }
     }
 }
 

@@ -193,6 +193,7 @@ struct RiderStatsTab: View {
 struct TimingScoringTab: View {
     
     @Environment(\.colorScheme) var colorScheme
+//    @Binding var isExpanded: Bool
     var rider: Rider
     var races = [
         "Daytona 200",
@@ -302,10 +303,10 @@ struct TimingScoringTab: View {
 //            .frame(maxWidth: geo.size.width)
 //            .frame(height: geo.size.height)
 //            .padding()
-            withAnimation {
+            
                 List {
                     ForEach(races, id: \.self) { race in
-                        Dropdown(label: race, content: ["String" : "String"])
+                        Dropdown(label: race, content: ["POS" : "1"])
                     }
                     .accentColor(Color.ui.lightRed)
                 }
@@ -313,8 +314,6 @@ struct TimingScoringTab: View {
                 .listRowBackground(Color.black)
                 .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
                 }
-            }
-            
         }
     }
 }
