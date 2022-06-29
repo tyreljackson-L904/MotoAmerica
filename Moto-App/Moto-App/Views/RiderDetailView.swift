@@ -9,7 +9,8 @@ import SwiftUI
 
 struct RiderDetailView: View {
     
-    @State var tabSelection = 1
+    @State var tabSelection = 3
+    @State private var orientation = UIDeviceOrientation.unknown
     var rider: Rider
     
     var body: some View {
@@ -27,12 +28,13 @@ struct RiderDetailView: View {
                 
                 TabbedContentView(tabSelection: $tabSelection, rider: rider)
             }
+            .frame(maxWidth: .infinity)
             .navigationBarHidden(true)
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
-
 
 
 // MARK: Rider Image View
@@ -53,6 +55,7 @@ struct RiderImageView: View {
                     ]), startPoint: .leading, endPoint: .trailing)
                 )
                 .frame(maxWidth: .infinity)
+//                .frame(height: 430)
                 .padding(.top, 70)
             
             Image("\(rider.riderImage)")
@@ -94,7 +97,7 @@ struct RiderImageView: View {
                     }.padding()
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: geo.size.height)
+//                .frame(maxHeight: 500)
             }
         }
     }
@@ -306,7 +309,7 @@ struct TimingScoringTab: View {
             
                 List {
                     ForEach(races, id: \.self) { race in
-                        Dropdown(label: race, content: ["POS" : "1"])
+                        Dropdown(label: race, content: ["String":"String"])
                     }
                     .accentColor(Color.ui.lightRed)
                 }
@@ -323,6 +326,7 @@ struct TimingScoringTab: View {
 struct RiderDetailView_Previews: PreviewProvider {
     static var previews: some View {
         RiderDetailView(rider: RiderList.riders[4])
+            .previewInterfaceOrientation(.portrait)
         RiderDetailView(rider: RiderList.riders[4])
             .preferredColorScheme(.dark)
     }

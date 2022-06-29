@@ -31,6 +31,7 @@
 		A5E859992858CB04003A9DBE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E859982858CB04003A9DBE /* MainView.swift */; };
 		A5EC673A285556DA00AAA97C /* RaceClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6739285556DA00AAA97C /* RaceClassView.swift */; };
 		A5EC673D28556B9100AAA97C /* RaceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC673C28556B9100AAA97C /* RaceClass.swift */; };
+		A5F3BF65286A63E900F99DEF /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3BF64286A63E900F99DEF /* DeviceRotationViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		A5E859982858CB04003A9DBE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A5EC6739285556DA00AAA97C /* RaceClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClassView.swift; sourceTree = "<group>"; };
 		A5EC673C28556B9100AAA97C /* RaceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClass.swift; sourceTree = "<group>"; };
+		A5F3BF64286A63E900F99DEF /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C19A942864EA7A00C738A5 /* TextModifier.swift */,
+				A5F3BF64286A63E900F99DEF /* DeviceRotationViewModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				A5E0E48628625E920010D1EE /* DataView.swift in Sources */,
 				A5C19A952864EA7A00C738A5 /* TextModifier.swift in Sources */,
 				A5D620B02866C0F4006A8201 /* RiderModalView.swift in Sources */,
+				A5F3BF65286A63E900F99DEF /* DeviceRotationViewModifier.swift in Sources */,
 				A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */,
 				A5B6F6CB285BD171000A0A26 /* TimingScoringView.swift in Sources */,
 				A5B6F6C9285BD11B000A0A26 /* SearchView.swift in Sources */,

@@ -33,7 +33,7 @@ struct MainView: View {
             RaceClassView(rider: rider)
                 .tabItem{
                     Image(systemName: "person")
-                    Text("Race Class")
+                    Text("Riders")
                 }
         }
         .onAppear {

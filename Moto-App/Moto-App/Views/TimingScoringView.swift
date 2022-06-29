@@ -25,6 +25,7 @@ public struct TimingScoringView: View {
             .padding(.top, 25)
             .navigationBarHidden(true)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -127,9 +128,6 @@ public struct TableView: View {
                             .foregroundColor(.red)
                             .multilineTextAlignment(.center)
                     }
-//                    .sheet(isPresented: $showModal) {
-//                        RiderModalView(rider: rider)
-//                    }
 
                     Text("\(data.make)")
                         .font(.system(size: 12))
