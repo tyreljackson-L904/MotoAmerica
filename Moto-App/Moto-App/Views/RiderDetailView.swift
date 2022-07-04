@@ -10,6 +10,7 @@ import SwiftUI
 struct RiderDetailView: View {
     
     @State var tabSelection = 3
+    @State var selectedRace = "Daytona 200"
     @State private var orientation = UIDeviceOrientation.unknown
     var rider: Rider
     
@@ -26,7 +27,7 @@ struct RiderDetailView: View {
                 
                 RiderImageView(tabSelection: $tabSelection, rider: rider)
                 
-                TabbedContentView(tabSelection: $tabSelection, rider: rider)
+                TabbedContentView(tabSelection: $tabSelection, selectedRace: $selectedRace, rider: rider)
             }
             .frame(maxWidth: .infinity)
             .navigationBarHidden(true)
@@ -106,6 +107,7 @@ struct RiderImageView: View {
 // MARK: Tab Content View
 struct TabbedContentView: View {
     @Binding var tabSelection: Int
+    @Binding var selectedRace: String
     var rider: Rider
     
     var body: some View {
@@ -117,7 +119,7 @@ struct TabbedContentView: View {
                 } else if tabSelection == 2 {
                     RiderStatsTab(rider: rider)
                 } else {
-                    TimingScoringTab(rider: rider)
+                    TimingScoringTab(rider: rider, selectedRace: $selectedRace)
                 }
                 
             }
@@ -211,6 +213,7 @@ struct TimingScoringTab: View {
         "MotoAmerica Superbikes At New Jersey",
         "MotoAmerica Superbikes At Alabama"
     ]
+    @Binding var selectedRace: String
     
     var body: some View {
         GeometryReader { geo in
@@ -307,16 +310,24 @@ struct TimingScoringTab: View {
 //            .frame(height: geo.size.height)
 //            .padding()
             
-                List {
-                    ForEach(races, id: \.self) { race in
-                        Dropdown(label: race, content: ["String":"String"])
-                    }
-                    .accentColor(Color.ui.lightRed)
+            VStack {
+                Picker(races[0], selection: $selectedRace) {
+                        ForEach(races, id: \.self) { race in
+                            Text(race)
+                        }
+                        .accentColor(Color.ui.lightRed)
                 }
-                .listStyle(PlainListStyle())
-                .listRowBackground(Color.black)
-                .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
+                
+                
+                VStack(spacing: 10) {
+                    Text("\(selectedRace)")
+                    Text("Timing for: \(rider.name)")
                 }
+                .frame(maxWidth: .infinity)
+                .frame(height: geo.size.height / 2)
+                .padding()
+            }
+            
         }
     }
 }
