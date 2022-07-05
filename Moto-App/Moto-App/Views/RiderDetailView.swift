@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RiderDetailView: View {
     
-    @State var tabSelection = 3
+    @State var tabSelection = 1
     @State var selectedRace = "Daytona 200"
     @State private var orientation = UIDeviceOrientation.unknown
     var rider: Rider

@@ -11,21 +11,27 @@ import AVFoundation
 
 class UIVideoPlayer: UIView {
     
-    var playerLayer = AVPlayerLayer()
+    private let playerLayer = AVPlayerLayer()
+    private var playerLooper: AVPlayerLooper?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         guard let url = Bundle.main.url(forResource: "motovideo", withExtension: "mp4") else { return }
-
-        let player = AVPlayer(url: url)
+        
+        let asset = AVAsset(url: url)
+        let item = AVPlayerItem(asset: asset)
+        let player = AVQueuePlayer()
         player.isMuted = true
-        player.play()
+        
       
         playerLayer.player = player
         playerLayer.videoGravity = AVLayerVideoGravity(rawValue: AVLayerVideoGravity.resizeAspectFill.rawValue)
         
         layer.addSublayer(playerLayer)
+        playerLooper = AVPlayerLooper(player: player, templateItem: item)
+        
+        player.play()
     }
     
     override func layoutSubviews() {

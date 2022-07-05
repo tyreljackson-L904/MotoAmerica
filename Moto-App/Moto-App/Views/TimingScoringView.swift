@@ -144,4 +144,9 @@ public struct TableView: View {
             .listStyle(PlainListStyle())
         }
     }
+    
+//    func shortName(name: String) {
+//        let value: Int = name.firstIndex(of: " ")
+//        return value
+//    }
 }

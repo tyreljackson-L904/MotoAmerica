@@ -61,8 +61,8 @@ struct RiderCell: View {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(
                         LinearGradient(gradient: Gradient(stops: [
-                            .init(color: Color.ui.lightRed, location: 0.03),
-                            .init(color: Color.ui.grayBlue, location: 0.03),
+                            .init(color: Color.ui.lightRed, location: 0.01),
+                            .init(color: Color.ui.grayBlue, location: 0.02),
                         ]), startPoint: .leading, endPoint: .trailing)
                     )
                     .frame(width: geo.size.width, height: geo.size.height)
