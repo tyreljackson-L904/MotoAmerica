@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RiderModalView: View {
     
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var mode
     var rider: Rider
     
     var body: some View {
@@ -37,8 +37,8 @@ struct RiderModalView: View {
                 Text("Bike: \(rider.bike)")
                     .font(.subheadline)
                 
-                Button {
-                    //
+                NavigationLink {
+                    RiderDetailView(rider: rider)
                 } label: {
                     Text("View Bio")
                         .font(.title3)
@@ -50,10 +50,9 @@ struct RiderModalView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
-
                 
                 Button {
-                    dismiss()
+                    mode.wrappedValue.dismiss()
                 } label: {
                     Text("Close")
                         .font(.headline)

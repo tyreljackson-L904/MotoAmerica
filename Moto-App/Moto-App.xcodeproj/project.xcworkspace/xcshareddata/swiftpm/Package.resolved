@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
-      "identity" : "swiftui-navigation-stack",
+      "identity" : "apollo-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/matteopuc/swiftui-navigation-stack.git",
+      "location" : "https://github.com/apollographql/apollo-ios.git",
       "state" : {
-        "revision" : "be0db68ed0d84ed543bf8f7600a1f84de015f753",
-        "version" : "1.0.4"
+        "branch" : "main",
+        "revision" : "84c42e013d143c1d3ec808816e2a2b5e03fadf80"
+      }
+    },
+    {
+      "identity" : "sqlite.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephencelis/SQLite.swift.git",
+      "state" : {
+        "revision" : "4d543d811ee644fa4cc4bfa0be996b4dd6ba0f54",
+        "version" : "0.13.3"
       }
     }
   ],

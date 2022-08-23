@@ -73,7 +73,6 @@ struct RiderCell: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 100)
-                    .clipShape(Circle())
                     .padding(.leading, 20)
                 
                 

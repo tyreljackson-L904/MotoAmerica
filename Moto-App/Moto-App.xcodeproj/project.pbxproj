@@ -13,24 +13,31 @@
 		A58132A62854514300B95C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A52854514300B95C3E /* Assets.xcassets */; };
 		A58132A92854514300B95C3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58132A82854514300B95C3E /* Preview Assets.xcassets */; };
 		A58132B12854F61F00B95C3E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58132B02854F61F00B95C3E /* Colors.swift */; };
-		A5AE482C2856785000F8F423 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = A5AE482B2856785000F8F423 /* NavigationStack */; };
 		A5B6F6C9285BD11B000A0A26 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6F6C8285BD11B000A0A26 /* SearchView.swift */; };
 		A5B6F6CB285BD171000A0A26 /* TimingScoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6F6CA285BD171000A0A26 /* TimingScoringView.swift */; };
 		A5B6F6CD285BEC4F000A0A26 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6F6CC285BEC4F000A0A26 /* Timing.swift */; };
 		A5B8D82C285522690075A8D8 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8D82B285522690075A8D8 /* Rider.swift */; };
+		A5BEC005288EFF2D00895C50 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A5BEC004288EFF2D00895C50 /* Apollo */; };
+		A5BEC007288EFF2D00895C50 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = A5BEC006288EFF2D00895C50 /* ApolloAPI */; };
 		A5C19A952864EA7A00C738A5 /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C19A942864EA7A00C738A5 /* TextModifier.swift */; };
 		A5C5447F2856F5F8004E4368 /* RiderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5447E2856F5F8004E4368 /* RiderDetailView.swift */; };
 		A5D620AE28667456006A8201 /* RaceClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D620AD28667456006A8201 /* RaceClassCell.swift */; };
 		A5D620B02866C0F4006A8201 /* RiderModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D620AF2866C0F4006A8201 /* RiderModalView.swift */; };
 		A5D620B2286917D0006A8201 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D620B1286917D0006A8201 /* Dropdown.swift */; };
+		A5DC1A7E28936A3C00B014E9 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC1A7D28936A3C00B014E9 /* TabBar.swift */; };
 		A5E0E48628625E920010D1EE /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0E48528625E920010D1EE /* DataView.swift */; };
 		A5E3238D28593AFC002C8D98 /* BackgroundVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */; };
 		A5E323922859426D002C8D98 /* testVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A5E323912859426D002C8D98 /* testVideo.mp4 */; };
 		A5E32395285993B7002C8D98 /* motovideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A5E32394285993B7002C8D98 /* motovideo.mp4 */; };
 		A5E32398285A2238002C8D98 /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E32397285A2238002C8D98 /* FloatingMenu.swift */; };
 		A5E859992858CB04003A9DBE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E859982858CB04003A9DBE /* MainView.swift */; };
+		A5EC1FCC28B06C2A00D4FF3D /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A5EC1FCB28B06C2A00D4FF3D /* Apollo */; };
+		A5EC1FCE28B06C2A00D4FF3D /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = A5EC1FCD28B06C2A00D4FF3D /* ApolloAPI */; };
+		A5EC1FD028B06C2A00D4FF3D /* ApolloUtils in Frameworks */ = {isa = PBXBuildFile; productRef = A5EC1FCF28B06C2A00D4FF3D /* ApolloUtils */; };
+		A5EC1FD228B06C8800D4FF3D /* FetchRiderQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A5EC1FD128B06C8800D4FF3D /* FetchRiderQuery.graphql */; };
 		A5EC673A285556DA00AAA97C /* RaceClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6739285556DA00AAA97C /* RaceClassView.swift */; };
 		A5EC673D28556B9100AAA97C /* RaceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC673C28556B9100AAA97C /* RaceClass.swift */; };
+		A5EEDC6D2894BC1600CF8D79 /* RiderDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDC6C2894BC1600CF8D79 /* RiderDataViewModel.swift */; };
 		A5F3BF65286A63E900F99DEF /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3BF64286A63E900F99DEF /* DeviceRotationViewModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,14 +58,17 @@
 		A5D620AD28667456006A8201 /* RaceClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClassCell.swift; sourceTree = "<group>"; };
 		A5D620AF2866C0F4006A8201 /* RiderModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderModalView.swift; sourceTree = "<group>"; };
 		A5D620B1286917D0006A8201 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		A5DC1A7D28936A3C00B014E9 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		A5E0E48528625E920010D1EE /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		A5E3238C28593AFC002C8D98 /* BackgroundVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideo.swift; sourceTree = "<group>"; };
 		A5E323912859426D002C8D98 /* testVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = testVideo.mp4; sourceTree = "<group>"; };
 		A5E32394285993B7002C8D98 /* motovideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = motovideo.mp4; path = ../../../../../../Downloads/motovideo.mp4; sourceTree = "<group>"; };
 		A5E32397285A2238002C8D98 /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
 		A5E859982858CB04003A9DBE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A5EC1FD128B06C8800D4FF3D /* FetchRiderQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchRiderQuery.graphql; sourceTree = "<group>"; };
 		A5EC6739285556DA00AAA97C /* RaceClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClassView.swift; sourceTree = "<group>"; };
 		A5EC673C28556B9100AAA97C /* RaceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceClass.swift; sourceTree = "<group>"; };
+		A5EEDC6C2894BC1600CF8D79 /* RiderDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderDataViewModel.swift; sourceTree = "<group>"; };
 		A5F3BF64286A63E900F99DEF /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +77,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5AE482C2856785000F8F423 /* NavigationStack in Frameworks */,
+				A5BEC007288EFF2D00895C50 /* ApolloAPI in Frameworks */,
+				A5EC1FD028B06C2A00D4FF3D /* ApolloUtils in Frameworks */,
+				A5EC1FCC28B06C2A00D4FF3D /* Apollo in Frameworks */,
+				A5EC1FCE28B06C2A00D4FF3D /* ApolloAPI in Frameworks */,
+				A5BEC005288EFF2D00895C50 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +93,7 @@
 			children = (
 				A5C19A942864EA7A00C738A5 /* TextModifier.swift */,
 				A5F3BF64286A63E900F99DEF /* DeviceRotationViewModifier.swift */,
+				A5DC1A7D28936A3C00B014E9 /* TabBar.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -102,12 +117,14 @@
 		A58132A02854514000B95C3E /* Moto-App */ = {
 			isa = PBXGroup;
 			children = (
+				A5EEDC6B2894BBF100CF8D79 /* ViewModels */,
 				A5E32394285993B7002C8D98 /* motovideo.mp4 */,
 				A5E323912859426D002C8D98 /* testVideo.mp4 */,
 				A5D620AC28667438006A8201 /* Components */,
 				A5EC673E285576DE00AAA97C /* Views */,
 				A5EC673B28555AA000AAA97C /* Models */,
 				A5487183285516790038000B /* Modifiers */,
+				A5EC1FC828B06B9500D4FF3D /* API */,
 				A58132AF2854F60900B95C3E /* Extensions */,
 				A58132A12854514000B95C3E /* Moto_AppApp.swift */,
 				A58132A52854514300B95C3E /* Assets.xcassets */,
@@ -143,6 +160,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A5EC1FC828B06B9500D4FF3D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC1FC928B06BBB00D4FF3D /* Queries */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A5EC1FC928B06BBB00D4FF3D /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC1FD128B06C8800D4FF3D /* FetchRiderQuery.graphql */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
 		A5EC673B28555AA000AAA97C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +202,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A5EEDC6B2894BBF100CF8D79 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A5EEDC6C2894BC1600CF8D79 /* RiderDataViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,7 +227,11 @@
 			);
 			name = "Moto-App";
 			packageProductDependencies = (
-				A5AE482B2856785000F8F423 /* NavigationStack */,
+				A5BEC004288EFF2D00895C50 /* Apollo */,
+				A5BEC006288EFF2D00895C50 /* ApolloAPI */,
+				A5EC1FCB28B06C2A00D4FF3D /* Apollo */,
+				A5EC1FCD28B06C2A00D4FF3D /* ApolloAPI */,
+				A5EC1FCF28B06C2A00D4FF3D /* ApolloUtils */,
 			);
 			productName = "Moto-App";
 			productReference = A581329E2854514000B95C3E /* Moto-App.app */;
@@ -217,7 +262,8 @@
 			);
 			mainGroup = A58132952854514000B95C3E;
 			packageReferences = (
-				A5AE482A2856785000F8F423 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+				A5BEC003288EFF2D00895C50 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				A5EC1FCA28B06C2A00D4FF3D /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = A581329F2854514000B95C3E /* Products */;
 			projectDirPath = "";
@@ -235,6 +281,7 @@
 			files = (
 				A5E32395285993B7002C8D98 /* motovideo.mp4 in Resources */,
 				A51CF0AA2858F82B00106593 /* LaunchScreen.storyboard in Resources */,
+				A5EC1FD228B06C8800D4FF3D /* FetchRiderQuery.graphql in Resources */,
 				A58132A92854514300B95C3E /* Preview Assets.xcassets in Resources */,
 				A58132A62854514300B95C3E /* Assets.xcassets in Resources */,
 				A5E323922859426D002C8D98 /* testVideo.mp4 in Resources */,
@@ -253,12 +300,14 @@
 				A5EC673D28556B9100AAA97C /* RaceClass.swift in Sources */,
 				A58132A42854514000B95C3E /* RiderListView.swift in Sources */,
 				A5B6F6CD285BEC4F000A0A26 /* Timing.swift in Sources */,
+				A5DC1A7E28936A3C00B014E9 /* TabBar.swift in Sources */,
 				A58132B12854F61F00B95C3E /* Colors.swift in Sources */,
 				A5EC673A285556DA00AAA97C /* RaceClassView.swift in Sources */,
 				A5E859992858CB04003A9DBE /* MainView.swift in Sources */,
 				A58132A22854514000B95C3E /* Moto_AppApp.swift in Sources */,
 				A5E3238D28593AFC002C8D98 /* BackgroundVideo.swift in Sources */,
 				A5D620B2286917D0006A8201 /* Dropdown.swift in Sources */,
+				A5EEDC6D2894BC1600CF8D79 /* RiderDataViewModel.swift in Sources */,
 				A5E0E48628625E920010D1EE /* DataView.swift in Sources */,
 				A5C19A952864EA7A00C738A5 /* TextModifier.swift in Sources */,
 				A5D620B02866C0F4006A8201 /* RiderModalView.swift in Sources */,
@@ -323,6 +372,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = No;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -377,6 +428,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = No;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -402,7 +455,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,7 +486,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,21 +526,49 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A5AE482A2856785000F8F423 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+		A5BEC003288EFF2D00895C50 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 0.9.5;
+			};
+		};
+		A5EC1FCA28B06C2A00D4FF3D /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A5AE482B2856785000F8F423 /* NavigationStack */ = {
+		A5BEC004288EFF2D00895C50 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A5AE482A2856785000F8F423 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
-			productName = NavigationStack;
+			package = A5BEC003288EFF2D00895C50 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		A5BEC006288EFF2D00895C50 /* ApolloAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5BEC003288EFF2D00895C50 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloAPI;
+		};
+		A5EC1FCB28B06C2A00D4FF3D /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5EC1FCA28B06C2A00D4FF3D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		A5EC1FCD28B06C2A00D4FF3D /* ApolloAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5EC1FCA28B06C2A00D4FF3D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloAPI;
+		};
+		A5EC1FCF28B06C2A00D4FF3D /* ApolloUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5EC1FCA28B06C2A00D4FF3D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

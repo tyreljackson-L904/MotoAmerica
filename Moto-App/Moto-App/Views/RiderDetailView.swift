@@ -15,7 +15,7 @@ struct RiderDetailView: View {
     var rider: Rider
     
     var body: some View {
-        NavigationView {
+
             VStack{
                 // Picker to tab content
                 Picker("Select" ,selection: $tabSelection) {
@@ -30,10 +30,7 @@ struct RiderDetailView: View {
                 TabbedContentView(tabSelection: $tabSelection, selectedRace: $selectedRace, rider: rider)
             }
             .frame(maxWidth: .infinity)
-            .navigationBarHidden(true)
-            
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -216,119 +213,41 @@ struct TimingScoringTab: View {
     @Binding var selectedRace: String
     
     var body: some View {
-        GeometryReader { geo in
-            // timing stack
-//            VStack(spacing: 40) {
-//                // timing rows
-//                HStack(spacing: 20) {
-//                    VStack(spacing: 10) {
-//                        Text("POS")
-//                            .bold()
-//                        Text("1")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("NUM")
-//                            .bold()
-//                        Text("35")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("NAME")
-//                            .bold()
-//                        Text("Andy Birino")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("MAKE")
-//                            .bold()
-//                        Text("KAW")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("BEST LAP")
-//                            .bold()
-//                        Text("35.957")
-//                            .font(.subheadline)
-//                    }
-//                }
-//
-//                Divider()
-//
-//                HStack(spacing: 20) {
-//                    VStack(spacing: 10) {
-//                        Text("DIFF")
-//                            .bold()
-//                        Text("12:59:59")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("GAP")
-//                            .bold()
-//                        Text("PIT")
-//                            .font(.subheadline)
-//                    }
-//
-//                }
-//
-//                Divider()
-//
-//                HStack(spacing: 20) {
-//                    VStack(spacing: 10) {
-//                        Text("LAST LAP")
-//                            .bold()
-//                        Text("4:50:12")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("S1")
-//                            .bold()
-//                        Text("2:00.14")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("S2")
-//                            .bold()
-//                        Text("1:27.12")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("S3")
-//                            .bold()
-//                        Text("1:30.66")
-//                            .font(.subheadline)
-//                    }
-//                    VStack(spacing: 10) {
-//                        Text("SPEED")
-//                            .bold()
-//                        Text("26.20")
-//                            .font(.subheadline)
-//                    }
-//                }
-//            }
-//            .frame(maxWidth: geo.size.width)
-//            .frame(height: geo.size.height)
-//            .padding()
-            
-            VStack {
-                Picker(races[0], selection: $selectedRace) {
-                        ForEach(races, id: \.self) { race in
-                            Text(race)
-                        }
-                        .accentColor(Color.ui.lightRed)
+        
+            List {
+                ForEach(races, id: \.self) { race in
+                    Dropdown(label: race)
+                        .padding()
+                    
                 }
-                
-                
-                VStack(spacing: 10) {
-                    Text("\(selectedRace)")
-                    Text("Timing for: \(rider.name)")
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: geo.size.height / 2)
-                .padding()
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
             }
-            
-        }
+            .listStyle(PlainListStyle())
+            .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
+            }
+ 
+        
+//            VStack {
+//                Picker(races[0], selection: $selectedRace) {
+//                        ForEach(races, id: \.self) { race in
+//                            Text(race)
+//                                .accentColor(.white)
+//                        }
+//                        .multilineTextAlignment(.center)
+//
+//                }
+//                .padding()
+//                .background(Color.init("mainBlueGray"))
+//
+//                VStack(spacing: 10) {
+//                    Text("\(selectedRace)")
+//                    Text("Timing for: \(rider.name)")
+//                }
+//                .frame(maxWidth: .infinity)
+//                .frame(height: geo.size.height / 2)
+//                .padding()
+//            }
     }
 }
 

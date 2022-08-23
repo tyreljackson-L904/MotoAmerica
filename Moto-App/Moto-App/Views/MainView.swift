@@ -14,33 +14,37 @@ struct MainView: View {
     @State private var player = AVQueuePlayer()
     
     // content view properties
-    @State var isLoading = true
-    @State var selection = ""
+    @State private var isLoading = true
+    @State private var selection = ""
     var rider: Rider
     var race: RaceClass
     
     var body: some View {
-        TabView {
-            
-            // MARK: Timing/Scoring Tab View
-            TimingScoringView(rider: rider)
-                .tabItem{
-                    Image(systemName: "calendar")
-                    Text("Timing & Scoring")
-                }
-            
-            // MARK: Race Class Tab View
-            RaceClassView(rider: rider)
-                .tabItem{
-                    Image(systemName: "person")
-                    Text("Riders")
-                }
-        }
-        .onAppear {
-            let tabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.configureWithDefaultBackground()
-            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-        }
+//        NavigationView {
+            TabView {
+                
+                // MARK: Timing/Scoring Tab View
+                TimingScoringView(rider: rider)
+                    .tabItem{
+                        Image(systemName: "calendar")
+                        Text("Timing & Scoring")
+                    }
+                
+                // MARK: Race Class Tab View
+                RaceClassView(rider: rider)
+                    .tabItem{
+                        Image(systemName: "person")
+                        Text("Riders")
+                    }
+            }
+            .navigationTitle("")
+            .navigationBarHidden(true)
+            .onAppear {
+                let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.configureWithDefaultBackground()
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
+//        }
         
         // MARK: PLAYER VIEW
         //        NavigationView {

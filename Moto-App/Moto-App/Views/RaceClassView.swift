@@ -26,6 +26,8 @@ struct RaceClassView: View {
                 .listRowBackground(Color.clear)
                 .padding()
             }
+            .listStyle(PlainListStyle())
+            .padding(.vertical, 0)
             .navigationTitle("Race Classes")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear{ UITableView.appearance().showsVerticalScrollIndicator = false
